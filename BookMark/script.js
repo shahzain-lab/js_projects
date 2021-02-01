@@ -8,30 +8,45 @@ class Book{
 }
 
 //UI Class: Handle UI Tasks
-class UI {
+class UI{
     static displayBooks(){
-        const StoreBooks = [
+        const StoredBooks = [
             {
-                title: 'Book One',
+                title: 'Book one',
                 author: 'John Doe',
-                isbn: '23231'
+                isbn: '12312'
             },
             {
-                title: 'Book Two',
+                title: 'Book two',
                 author: 'John Doe',
-                isbn: '23341'
+                isbn: '12323'
             },
         ];
-        const books = StoreBooks;
+          const books = StoredBooks;
 
-        books.forEach((book) => UI.addBookToList(book))
+          books.forEach((book) => UI.addBookToList(book));
     }
-    
+
+    static addBookToList(book){
+        const list = document.querySelector('#book-list');
+
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+          <td>${book.title}</td>
+          <td>${book.author}</td>
+          <td>${book.isbn}</td>
+          <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
+        `;
+
+        list.appendChild(row)
+    }
 }
+
 //Store Class: Handle Storage
 
-//Events: Display Books
-
+//Events: Display Book
+document.addEventListener('DOMContentLoaded', UI.displayBooks)
 //Events: Add a Book
 
-//Events: Remove a Books
+//Events: Remove a Books 
