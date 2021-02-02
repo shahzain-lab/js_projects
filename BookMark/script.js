@@ -71,7 +71,10 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
     UI.addBookToList(book)
 
     //clearFeild
-    UI.clearFeild()
+    UI.clearFeild();
+
+    //delete feild
+    
 })
 
 //remove a book
