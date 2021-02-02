@@ -66,15 +66,15 @@ img {
 }
 
 .red {
-  color: #4885ed;
+  color: #db3236;
 }
 
 .yellow {
-  color: #4885ed;
+  color: #ffc107;
 }
 
 .green {
-  color: #4885ed;
+  color: #3cba54;
 }
 
 .exclaim {
@@ -194,7 +194,6 @@ img {
 .searchEntry .searchBar .button:hover i,
 .searchEntry .searchBar .button:focus i {
   padding-bottom: .5rem;
-  border-bottom-width: 1px;
   border-bottom-style: solid;
 }
 
