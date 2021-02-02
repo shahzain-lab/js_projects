@@ -1,5 +1,13 @@
 
 //class Book: Represent a Book
+class Book{
+    constructor(title, author , isbn){
+        this.title = title,
+        this.author =author,
+        this.isbn = isbn
+    }
+}
+
 
 class UI{
     static displayData(){
@@ -16,21 +24,27 @@ class UI{
             },
         ]
         const books = storeData;
-        books.forEach((book) => ToTheList(book));
+        books.forEach((book) => UI.addBookToList(book));
 
-        const list = document.createElement('tr');
-        
-       const row =  document.querySelector('#book-list');
-       row.innerHTML = `
-         <td>${book.title}</td>
-         <td>${book.author}</td>
-         <td>${book.isbn}</td>
-         <td href="#" className="btn btn-danger">X</td>
-       `;
-       list.appendChild(row)
-    };
+    }
+    static addBookToList(book){
+        const list = document.querySelector('#book-list');
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+        <td>${book.title}</td>
+        <td>${book.author}</td>
+        <td>${book.isbn}</td>
+        <td><a class="btn btn-danger btn-sm delete"  href="#">X</a></td>
+        `;
+        list.appendChild(row);
+    }
     
 }
 
+//handle storage
+
 ///Display UI
-addEventListener('DOMContentLoaded', displayData)
+document.addEventListener('DOMContentLoaded', UI.displayData)
+
+//add a book
