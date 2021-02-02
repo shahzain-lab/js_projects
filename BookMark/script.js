@@ -39,6 +39,12 @@ class UI{
         `;
         list.appendChild(row);
     }
+    static clearFeild(){
+        document.querySelector('#title').value = '';
+         document.querySelector('#author').value = '';
+         document.querySelector('#isbn').value = '';
+    
+    }
     
 }
 
@@ -48,3 +54,24 @@ class UI{
 document.addEventListener('DOMContentLoaded', UI.displayData)
 
 //add a book
+
+document.querySelector('#book-form').addEventListener('submit', (e) => {
+    
+    //avoid auto-submit
+    e.preventDefault()
+
+    //Get the values 
+    const title = document.querySelector('#title').value;
+    const author = document.querySelector('#author').value;
+    const isbn = document.querySelector('#isbn').value;
+
+    const book = new Book(title, author, isbn)
+   
+    ///initialize
+    UI.addBookToList(book)
+
+    //clearFeild
+    UI.clearFeild()
+})
+
+//remove a book
