@@ -39,6 +39,16 @@ class UI{
         `;
         list.appendChild(row);
     }
+    static showAlert(message, className){
+        const div = document.createElement('div');
+        div.className=`alert alert-${className}`;
+        div.appendChild(document.createTextNode(message));
+        const container = document.querySelector('.container');
+        const form = document.querySelector('#book-form')
+        container.insertBefore(div, form);
+
+        setTimeout(() => document.querySelector('.alert').remove(), 1500)
+    }
 
     static deleteBook(ele){
         if(ele.classList.contains('delete')){
@@ -57,6 +67,18 @@ class UI{
 
 //handle storage
 
+class Store{
+    static getBooks(){
+        let books;
+        if(localStorage.getItem('books') === null){
+            books = [];
+        }else{
+            books= localStorage.getItem('books')
+        }
+       return books
+    }
+}
+
 ///Display UI
 document.addEventListener('DOMContentLoaded', UI.displayData)
 
@@ -72,15 +94,23 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
     const author = document.querySelector('#author').value;
     const isbn = document.querySelector('#isbn').value;
 
-    const book = new Book(title, author, isbn)
+
+    //validation feild
+    if(title === "" || author === "" || isbn === "" ){
+        UI.showAlert('please fill the requirement',"danger")
+    }else{
+   // initialize The Book     
+    const book = new Book(title, author, isbn);
+
+    //success submit
+    UI.showAlert('Book Added' , 'success')
    
-    ///initialize
+    ///ADD  TO UI
     UI.addBookToList(book)
 
     //clearFeild
     UI.clearFeild();
-
-    //delete feild
+    }
 
 })
 
