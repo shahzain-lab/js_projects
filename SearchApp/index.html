@@ -3,27 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- /font-awesome// -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
     <title>SearchMe!</title>
 </head>
 <body>
-    <main>
-        <h1 class="offscreen">Search Engine powered by wikipidia</h1>
-        <section class="searchistory">
-            <h2 class="offscreen">Wiki engine</h2>
-            <div class="logo" aria-hidden="true">
-                SearchMe
-            </div>
-            <form id="searchBar" class="searchBar">
-                <label class="offscreen" for="search">Search...</label>
-                <input id="search" type="text" autocomplete="off">
-                <div id="clear" class="none button clear" role="button" tabindex="0" aria-label="clear search terms">
-                    X
-                </div>
-                <button id="searchButton" class="button searchButton" type="submit" aria-label="submit button">
-                    Search
-                </button>
-            </form>
-        </section>
-    </main>
+  <main>
+      <h1 class="offscreen">wikipedia search engine</h1>
+      <section class="serachEntry">
+          <h2 class="offscreen">Search Term Entry</h2> 
+          <div class="logo" aria-hidden="true">
+              SearchMe
+          </div>
+          <form id="searchBar" class="searchBar">
+              <label class="offscreen" for="search">Enter a search term</label>
+              <input id="search" type="text">
+              <div id="clear" class="none search clear" role="button" tabindex="0" aria-label="clear search term">
+                  X
+              </div>
+              <button id="searchButton" class="button searchButton" type="submit" aria-label="submit button">
+                  Search
+              </button>
+          </form>
+      </section>
+      <section class="results">
+          <h2 class="offscreen">Search Results</h2>
+          <div class="statBar">
+              <div id="stats" class="stats" aria-label="assertive">
+              </div>
+          </div>
+          <div class="searchResults" class="searchResults">
+              <div class="resultItem">
+                  <div class="resultTitle">
+                      <a hred="">Dack</a>
+                  </div>
+                  <div class="resultContents">
+                      <div class="resultImage">
+                          <img src="" alt='img'>
+                      </div>
+                      <div class="resultText">
+                          <p class="resultDesc">hello to dkjkefnjji,dfijf iji difji</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+  </main>
+  <footer>
+      <p>
+          Powered by <a href="https://www.wikipedia.org" target="blank">wikipedia</a>
+      </p>
+  </footer>
 </body>
 </html>
