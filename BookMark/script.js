@@ -11,19 +11,8 @@ class Book{
 
 class UI{
     static displayData(){
-        const storeData = [
-            {
-                title: 'Think and gtow rich',
-                author: 'Napoleon Hill',
-                isbn: 322323
-            },
-            {
-                title: 'Harry Potter',
-                author: 'J.K Rowling',
-                isbn: 372648
-            },
-        ]
-        const books = storeData;
+
+        const books = Store.getBooks();
         books.forEach((book) => UI.addBookToList(book));
 
     }
@@ -73,9 +62,26 @@ class Store{
         if(localStorage.getItem('books') === null){
             books = [];
         }else{
-            books= localStorage.getItem('books')
+            books= JSON.parse(localStorage.getItem('books'))
         }
        return books
+    }
+    static addBooks(book){
+        let books = Store.getBooks();
+
+        books.push(book);
+
+        localStorage.setItem('books', JSON.stringify(books))
+    }
+    static removeBooks(isbn){
+        let books = Store.getBooks();
+
+        books.forEach((book , index) => {
+            if(book.isbn === isbn){
+                books.splice(index , 1)
+            }
+        })
+        localStorage.setItem('books', JSON.stringify(books))
     }
 }
 
@@ -108,6 +114,9 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
     ///ADD  TO UI
     UI.addBookToList(book)
 
+    //add book to store
+    Store.addBooks(book)
+
     //clearFeild
     UI.clearFeild();
     }
@@ -116,5 +125,8 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
 //remove a book
 document.querySelector('#book-list').addEventListener('click',(e) => {
-    UI.deleteBook(e.target)
+    UI.deleteBook(e.target);
+
+    //remove from local storage
+    Store.removeBooks(e.target.parentElement.previousElementSibling.textContent)
 })
