@@ -6,6 +6,24 @@
     <title>SearchMe!</title>
 </head>
 <body>
-    <h3>SearchMe!</h3>
+    <main>
+        <h1 class="offscreen">Search Engine powered by wikipidia</h1>
+        <section class="searchistory">
+            <h2 class="offscreen">Wiki engine</h2>
+            <div class="logo" aria-hidden="true">
+                SearchMe
+            </div>
+            <form id="searchBar" class="searchBar">
+                <label class="offscreen" for="search">Search...</label>
+                <input id="search" type="text" autocomplete="off">
+                <div id="clear" class="none button clear" role="button" tabindex="0" aria-label="clear search terms">
+                    X
+                </div>
+                <button id="searchButton" class="button searchButton" type="submit" aria-label="submit button">
+                    Search
+                </button>
+            </form>
+        </section>
+    </main>
 </body>
 </html>
