@@ -1,30 +1,34 @@
-import { setSearchFocus } from './searchBar.js';
-import { buildSearchResults, clearStatsLine } from './searchResult.js';
+import { setSearchFocus,showClearTextButton, clearSearchText } from './searchBar.js';
+import { buildSearchResults, clearStatsLine, setStatsLine, deleteSearchResults } from './searchResult.js';
  import { getSearchTerm, retrieveSearchResults } from './dataFunction.js'
 
-document.addEventListener('reactdystatechange',(e) => {
-    if(e.target.raedyState === 'complete') {
+
+document.addEventListener('readystatechange',(e) => {
+    if(e.target.readyState === 'complete') {
         initApp();
     }
 });
 
 const initApp =()=> {
+    
     setSearchFocus()
-
-
     //3 listners
+    const search = document.getElementById('search');
+    search.addEventListener("input", showClearTextButton);
+
+    const clear = document.getElementById('clear');
+    clear.addEventListener('click', clearSearchText);
+
    const form = doucment.querySelector('#searchBar');
    form.addEventListener('submit' ,submitSearch);
 
 };
 
 //procedural 'workflow' function
-const submitSearch =(e) => {
-    e.preventDefault()
-
-    //delete search results
+const submitSearch =(event) => {
+    event.preventDefault()
+    deleteSearchResults()
     processTheSearch();
-
     setSearchFocus()
 }
 
@@ -35,5 +39,5 @@ const processTheSearch = async () => {
     if(searchTerm === "") return;
     const resultArray = await retrieveSearchResults(searchTerm)
     if(resultArray.length) buildSearchResults(resultArray);
-
+    setStatsLine(resultArray.length)
 }

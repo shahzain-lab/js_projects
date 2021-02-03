@@ -1,3 +1,12 @@
+export const deleteSearchResults =() => {
+    const parentElement = document.getElementById('searchResults');
+    let child = parentElement.lastElementChild;
+    while ( child ) {
+        parentElement.removeChild(child);
+        child = parentElement.lastElementChild;
+    }
+}
+
 export const buildSearchResults =(resultArray)=> {
     resultArray.forEach(result => {
         const resultItem = createResultItem(result);
@@ -50,5 +59,15 @@ const craeteResultText = result => {
 } 
 
 export const clearStatsLine = () => {
-    document.getElementById('statS').textContent = "";
+    document.getElementById('stats').textContent = "";
+};
+
+
+export const setStatsLine = numberOfResult => {
+    const statLine = document.getElementById('stats');
+    if(numberOfResult) {
+        statLine.textContent = `Displaying ${numberOfResult} results.`
+    } else {
+        statLine.textContent = 'no result found'
+    }
 }
