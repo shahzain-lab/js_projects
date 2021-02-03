@@ -1,5 +1,5 @@
 import { setSearchFocus } from './searchBar.js';
-import { buildSearchResults } from './searchResult.js';
+import { buildSearchResults, clearStatsLine } from './searchResult.js';
  import { getSearchTerm, retrieveSearchResults } from './dataFunction.js'
 
 document.addEventListener('reactdystatechange',(e) => {
@@ -30,6 +30,7 @@ const submitSearch =(e) => {
 
 const processTheSearch = async () => {
     //clear stats
+    clearStatsLine()
     const searchTerm = getSearchTerm()
     if(searchTerm === "") return;
     const resultArray = await retrieveSearchResults(searchTerm)
