@@ -14,7 +14,7 @@
   
       .stats {
         color: $stats-color;
-        font-size: 0.75rem;
+        font-size: 0.75rem; 
         @include mq(768px) {
           font-size: 1rem;
         }
