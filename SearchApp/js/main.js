@@ -1,4 +1,4 @@
-import { setSearchFocus,showClearTextButton, clearSearchText } from './searchBar.js';
+import { setSearchFocus,showClearTextButton, clearSearchText, clearPushListner } from './searchBar.js';
 import { buildSearchResults, clearStatsLine, setStatsLine, deleteSearchResults } from './searchResult.js';
  import { getSearchTerm, retrieveSearchResults } from './dataFunction.js'
 
@@ -10,7 +10,7 @@ document.addEventListener('readystatechange',(e) => {
 });
 
 const initApp =()=> {
-    
+
     setSearchFocus()
     //3 listners
     const search = document.getElementById('search');
@@ -18,8 +18,10 @@ const initApp =()=> {
 
     const clear = document.getElementById('clear');
     clear.addEventListener('click', clearSearchText);
+    clear.addEventListener('keydown', clearPushListner)
 
-   const form = doucment.querySelector('#searchBar');
+
+   const form = document.getElementById('searchBar');
    form.addEventListener('submit' ,submitSearch);
 
 };

@@ -1,7 +1,7 @@
 export const deleteSearchResults =() => {
     const parentElement = document.getElementById('searchResults');
     let child = parentElement.lastElementChild;
-    while ( child ) {
+    while (child) {
         parentElement.removeChild(child);
         child = parentElement.lastElementChild;
     }
@@ -48,7 +48,7 @@ const createResultImage = result => {
     return resultImage;
 }
 
-const craeteResultText = result => {
+const createResultText = result => {
     const resultText = document.createElement("div");
     resultText.classList.add("resultText");
     const resultDesc = document.createElement('p');
