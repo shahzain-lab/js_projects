@@ -1,6 +1,7 @@
 import { setSearchFocus } from './searchBar.js';
-import { searchTerm } from './dataFunction.js';
- 
+import { buildSearchResults } from './searchResult.js';
+ import { getSearchTerm, retrieveSearchResults } from './dataFunction.js'
+
 document.addEventListener('reactdystatechange',(e) => {
     if(e.target.raedyState === 'complete') {
         initApp();
@@ -32,4 +33,6 @@ const processTheSearch = async () => {
     const searchTerm = getSearchTerm()
     if(searchTerm === "") return;
     const resultArray = await retrieveSearchResults(searchTerm)
+    if(resultArray.length) buildSearchResults(resultArray);
+
 }
