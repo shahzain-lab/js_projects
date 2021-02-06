@@ -1,4 +1,4 @@
-let colors = ["#ff0000", "green", "rgba(133,122,200)", "#606060", "yellow"];
+let colors = ["blue", "green", "rgba(133,122,200)", "orange", "rgba(0,0,0,0.4)","rosybrown", "rgb(69, 175, 27)"];
 
 
 const btn = document.getElementById('btn');
