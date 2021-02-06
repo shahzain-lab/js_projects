@@ -61,10 +61,13 @@ main{
     background-color: darkcyan;
     border-radius: 15px;
     text-align: center;
+    height: 40%;
 }
 main h3{
     font-size: 2rem;
     padding: 45px 45px;
+    color:#d4d3d3;
+    height: 60%;
 }
  .btn{
      font-size: 1rem;
