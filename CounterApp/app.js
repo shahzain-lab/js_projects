@@ -27,7 +27,11 @@ btns.forEach((btn) => {
             hexHash += colors[getColor()]
         }
 
-        counter.style.color = hexHash
+        counter.style.color = hexHash;
+
+        if(classVal.contains('reset')){
+            counter.style.color = "#a7a6a6";
+        }
     })
 });
 
