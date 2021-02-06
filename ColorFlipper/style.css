@@ -15,6 +15,7 @@ nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 10px 0;
 }
 nav h3{
     font-size:1.4rem;
@@ -56,6 +57,7 @@ main{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow:  0 5px 7px -1px rgba(0, 0, 0, 0.72);
     background-color: darkcyan;
     border-radius: 15px;
     text-align: center;
@@ -64,4 +66,22 @@ main h3{
     font-size: 2rem;
     padding: 45px 45px;
 }
+ .btn{
+     font-size: 1rem;
+     font-weight: bold;
+     padding: 10px 20px;
+     border-radius: 5px;
+     margin-bottom: 4px;
+     background-color: #fff;
+     color: darkcyan;
+     cursor: pointer;
+     transition: .2s;
+     border: 1px solid #fff;
+     outline: none;
+}
 
+.btn:hover{
+    border:1px solid #fff;
+    background-color: darkcyan;
+    color: #fff;
+}
