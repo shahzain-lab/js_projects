@@ -28,3 +28,17 @@ main h3{
     background-color: #d3d1d1;
     color: #2c2c2c;
 }
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    padding:10px 2rem ;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 2rem 1rem;
+    outline: none;
+    cursor: pointer;
+}
