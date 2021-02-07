@@ -23,7 +23,7 @@ const reviews = [
       name: "peter jones",
       job: "intern",
       img:
-        "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg",
+        "https://tradiesinbusiness.com.au/wp-content/uploads/2019/09/avatar-jongen-voorbeeld-1.jpg",
       text:
         "Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.",
     },
@@ -32,7 +32,7 @@ const reviews = [
       name: "bill anderson",
       job: "the boss",
       img:
-        "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg",
+        "https://miro.medium.com/max/800/1*t0qEftasrCc2qanM79RrmA.png",
       text:
         "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ",
     },
@@ -44,16 +44,36 @@ const reviews = [
   const job  = document.getElementById('job');
   const info  = document.getElementById('info');
 
-  const nextBtn = document.getElementById('next-btn');
-  const prevBtn = document.getElementById('prev-btn');
-  const randomNumber = document.getElementById('random-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  const prevBtn = document.querySelector('.prev-btn');
+  const randomNumber = document.querySelector('.random-btn');
 
 
-  let itemNum = 1;
+  let itemNum = 0;
   window.addEventListener('DOMContentLoaded', () => {
-      const item = reviews[itemNum];
-      img.src = item.img;
-      author.textContent = item.name;
-      job.textContent = item.job;
-      info.textContent = item.text;
-  })
+      getData()
+  });
+
+function getData(){
+    const item = reviews[itemNum];
+    img.src = item.img;
+    author.textContent = item.name;
+    job.textContent = item.job;
+    info.textContent = item.text
+}
+
+nextBtn.addEventListener('click', () => {
+    itemNum++;
+    if(itemNum > reviews.length - 1) {
+        itemNum = 0
+    }
+    getData()
+});
+
+prevBtn.addEventListener('click', () => {
+    itemNum--;
+    if(itemNum < 0) {
+        itemNum = reviews.length - 1
+    };
+    getData();
+});
