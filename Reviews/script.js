@@ -77,3 +77,13 @@ prevBtn.addEventListener('click', () => {
     };
     getData();
 });
+
+randomNumber.addEventListener('click', () => {
+    itemNum = getRandomNumber();
+    console.log(itemNum);
+    getData();
+});
+
+function getRandomNumber(){
+    return Math.floor(Math.random() * reviews.length);
+}
