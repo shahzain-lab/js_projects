@@ -1,16 +1,13 @@
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<JS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 const toggleBtn = document.querySelector('.sidebar-toggle');
-const links = document.querySelector('.links');
+const sidebar = document.querySelector('.sidebar');
+const closeBtn = document.querySelector('.close-btn')
 
 
 toggleBtn.addEventListener('click', () => {
-    if(links.classList.contains('show-sidebar')){
-        links.classList.remove('show-sidebar')
-        console.log(links)
-    }
-    else{
-        links.classList.add('show-sidebar')
-        console.log(links)
-    }
+    sidebar.classList.toggle('show-sidebar')
+});
+closeBtn.addEventListener('click', () =>{
+    sidebar.classList.remove('show-sidebar')
 })
