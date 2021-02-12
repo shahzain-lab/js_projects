@@ -1,3 +1,6 @@
+$width: 100%;
+$background:#606060;
+
 *{
     padding: 0;
     margin: 0;
@@ -5,8 +8,8 @@
 }
 
 main{
-    width: 100%;
+    width:$width;
     min-height:100vh;
-    background-color: #e0e1e2;
+    background-color:$background;
 }
 
