@@ -1,3 +1,26 @@
 $full-width:100%;
-$background-color:#e2e2e2; 
+$background-color:#524343; 
 $text-align:center;
+$list-style:none;
+
+@mixin display($val) {
+    display: flex;
+    justify-content: $val;
+    align-items: center;
+}
+@mixin fontSize($size) {
+    font-size: $size;
+}
+
+.filter{
+    width: $full-width;
+    ul{
+        background-color: palevioletred;
+        text-align: $text-align;
+        @include display(space-around);
+        list-style: $list-style;
+        li{
+            @include fontSize(1.3rem)
+        }
+    }
+}

@@ -1,4 +1,12 @@
 
+@mixin padding($top, $right, $bottom, $left) {
+    padding:$top $right $bottom $left;
+}
+
+@mixin textDecoration($val) {
+    text-align:$val;
+    @content;
+}
 
 main{
     width: $full-width;
@@ -9,10 +17,15 @@ main{
 .main{
     header{
         text-align: $text-align;
-        padding-top:100px;
+        @include padding(100px);
         h3{
-            font-size: 2rem;
+            @include fontSize(2rem);
             color: #898a6c;
+            @include textDecoration(center){
+            text-transform: uppercase;
+            text-decoration-line: underline;
+            text-decoration-color:#b8be01;
+            }
         }
     }
 }

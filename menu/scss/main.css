@@ -1,3 +1,24 @@
+.filter {
+  width: 100%;
+}
+
+.filter ul {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+.filter ul li {
+  font-size: 1.3rem;
+}
+
 main {
   width: 100%;
   background-color: #e2e2e2;
@@ -6,12 +27,17 @@ main {
 
 .main header {
   text-align: center;
-  padding-top: 100px;
+  padding: 100px 0 0 0;
 }
 
 .main header h3 {
   font-size: 2rem;
   color: #898a6c;
+  text-transform: uppercase;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  -webkit-text-decoration-color: #b8be01;
+          text-decoration-color: #b8be01;
 }
 
 * {
