@@ -1,15 +1,8 @@
-$width: 100%;
-$background:#606060;
+@import '_base';
+@import '_head';
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
-main{
-    width:$width;
-    min-height:100vh;
-    background-color:$background;
-}
-

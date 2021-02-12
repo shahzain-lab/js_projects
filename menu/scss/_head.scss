@@ -1,0 +1,18 @@
+
+
+main{
+    width: $full-width;
+    background-color: $background-color;
+    min-height: 100vh;
+}
+
+.main{
+    header{
+        text-align: $text-align;
+        padding-top:100px;
+        h3{
+            font-size: 2rem;
+            color: #898a6c;
+        }
+    }
+}

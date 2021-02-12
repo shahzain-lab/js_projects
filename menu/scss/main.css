@@ -1,13 +1,23 @@
+main {
+  width: 100%;
+  background-color: #e2e2e2;
+  min-height: 100vh;
+}
+
+.main header {
+  text-align: center;
+  padding-top: 100px;
+}
+
+.main header h3 {
+  font-size: 2rem;
+  color: #898a6c;
+}
+
 * {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-main {
-  width: 100%;
-  min-height: 100vh;
-  background-color: #606060;
 }
 /*# sourceMappingURL=main.css.map */
