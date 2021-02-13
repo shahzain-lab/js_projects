@@ -34,6 +34,7 @@ const menu = [
         title:'sauted-vegetable-medley',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Autem aliquid ipsum quaerat error vero reiciendis, sequi numquam labore.',
         img:'./img/sauted-vegetable-medley.jpeg',
+        category:"Vegetarian",
     },
     {
         title:'Scoops kinds ice cream',
@@ -45,6 +46,7 @@ const menu = [
         title:'Skinny Broccoli And Mixed Vege Dish',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Autem aliquid ipsum quaerat error vero reiciendis, sequi numquam labore.',
         img:'./img/skinny-broccoli-and-mixed-vege-dish.jpg',
+        category:"Vegetarian",
     },
     {
         title:'Tequila Chicken Recipe',
@@ -62,17 +64,36 @@ const menu = [
         title:'Vegetable Stir Fry',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Autem aliquid ipsum quaerat error vero reiciendis, sequi numquam labore.',
         img:'./img/vegetable-stir-fry.jpg',
+        category:"Vegetarian",
     },
 ];
 
 const products = document.querySelector('.products');
+const filterBtn = document.querySelectorAll('li');
 
-window.addEventListener('DOMContentLoaded', () => {
-    displayMenu()
+
+filterBtn.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const category = e.currentTarget.dataset.type;
+        const itemCategory = menu.filter(filterItem => {
+            if(filterItem.category === category){
+                return filterItem;
+            }
+        });
+        if(category === 'all'){
+            return displayMenu(menu)
+        }else{
+            return displayMenu(itemCategory)
+        }
+    })
 })
 
-function displayMenu(){
-let menuItem = menu.map(item => {
+window.addEventListener('DOMContentLoaded', () => {
+    displayMenu(menu);
+})
+
+function displayMenu(menuItems){
+let menuItem = menuItems.map(item => {
     return `
     <div class="item">
     <img src=${item.img} alt=${item.title}>
