@@ -68,45 +68,16 @@ const menu = [
     },
 ];
 
-const products = document.querySelector('.products');
-const filterBtn = document.querySelectorAll('li');
-
-
-filterBtn.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        const category = e.currentTarget.dataset.type;
-        const itemCategory = menu.filter(filterItem => {
-            if(filterItem.category === category){
-                return filterItem;
-            }
-        });
-        if(category === 'all'){
-            return displayMenu(menu)
-        }else{
-            return displayMenu(itemCategory)
-        }
-    })
-})
+const container = document.querySelector('.section-center');
 
 window.addEventListener('DOMContentLoaded', () => {
-    displayMenu(menu);
-})
-
-function displayMenu(menuItems){
-let menuItem = menuItems.map(item => {
-    return `
-    <div class="item">
-    <img src=${item.img} alt=${item.title}>
-    <div class="itemText">
-    <h3>${item.title}</h3>
-    <p>${item.description}</p>
-  </div>
-</div>
-    `
+    displayMenuItem();
 });
 
-menuItem = menuItem.join('');
-products.innerHTML = menuItem;
-
-
+function DisplayMenuItem() {
+    let displayMenu = menu.map(item => {
+        return `
+        
+        `
+    })
 }
