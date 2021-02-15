@@ -125,4 +125,4 @@ function displayMenuItem(menuItem) {
     });
     displayMenu = displayMenu.join('');
     menuProducts.innerHTML = displayMenu;
-}
+};
