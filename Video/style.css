@@ -77,9 +77,6 @@ body {
 ul {
   list-style-type: none;
 }
-a {
-  text-decoration: none;
-}
 img:not(.logo) {
   width: 100%;
 }
@@ -215,8 +212,9 @@ header {
   object-fit: cover;
   z-index: -2;
 }
-h1 {
-  color: var(--clr-white);
+a {
+  font-size: 2rem;
+  color: yellow;
 }
 /* switch button */
 
