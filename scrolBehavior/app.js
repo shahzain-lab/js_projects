@@ -40,4 +40,32 @@ window.addEventListener('scroll', () => {
     }else{
         topLink.classList.remove('show-link')
     }
+});
+
+const scrolLink = document.querySelectorAll('.scroll-link');
+
+scrolLink.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const id = link.getAttribute('href').slice(1);
+        const element = document.getElementById(id);
+        const fixedNav = navbar.classList.contains('fixed-nav');
+        const containerHeight = linksContainer.getBoundingClientRect().height;
+        const navHeight = navbar.getBoundingClientRect().height;
+        let position = element.offsetTop - navHeight
+
+        if(navHeight > 82){
+            position = position + containerHeight;
+        }
+        if(!fixedNav){
+            position = position - navHeight;
+        }
+        window.scrollTo({
+            left: 0,
+            top: position,
+        })
+
+        linksContainer.style.height = 0;
+    })
 })
