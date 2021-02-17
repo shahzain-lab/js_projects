@@ -56,6 +56,7 @@
     font-size: 3rem;
     transition: all 0.75s ease-out; 
     padding: 4px;
+    color:#404040;
   }
   .info h3 {
     font-size: 1.3rem;
@@ -84,7 +85,7 @@
     color: white;
   }
   .purchase {
-    margin-top: 5rem;
+    margin: 2rem 0;
     transition: all 0.75s ease-out;
   }
   .purchase button {
