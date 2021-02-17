@@ -38,7 +38,7 @@
     width: 20rem;
     z-index: 2;
     transition: all 0.75s ease-out;
-  }
+  } 
   .circle {
     width: 15rem;
     height: 15rem;
@@ -54,7 +54,8 @@
   
   .info h1 {
     font-size: 3rem;
-    transition: all 0.75s ease-out;
+    transition: all 0.75s ease-out; 
+    padding: 4px;
   }
   .info h3 {
     font-size: 1.3rem;
