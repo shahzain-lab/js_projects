@@ -41,6 +41,7 @@ body{
     border: 2px solid #363636;
     margin: 2px;
     border-radius: 5px;
+    padding: 0 1rem;
 }
 
 form label{

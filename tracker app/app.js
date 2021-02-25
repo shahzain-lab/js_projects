@@ -5,6 +5,7 @@ const submit = document.getElementById('submit');
 const desc = document.getElementById('desc');
 const amount = document.getElementById('amount');
 const required = document.getElementById('required');
+const listItem = document.querySelector('.listitem');
 
  
 submit.addEventListener('click', (e) => {
@@ -19,14 +20,17 @@ submit.addEventListener('click', (e) => {
             req.remove()
         }, 3000);
     }else{
+        getData();
+        getBalance();
         desc.value = '';
         amount.value = '';
-        getData();
     }
     
 });
 
 
 function getData(){
-    
+    const item = document.createElement('li');
+    item.innerHTML = `${desc.value} <span>$ ${amount.value}</span>`;
+    listItem.appendChild(item)
 }
