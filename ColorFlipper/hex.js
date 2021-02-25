@@ -8,6 +8,8 @@ btn.addEventListener('click', () => {
 
     for(let i= 0 ; i < 6; i++ ){
         hexLoop += colors[getRandomNumber()]
+        console.log(i)
+
     }
     console.log(hexLoop)
     document.body.style.backgroundColor = hexLoop;
